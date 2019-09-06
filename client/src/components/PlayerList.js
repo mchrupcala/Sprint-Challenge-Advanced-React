@@ -5,6 +5,9 @@ import axios from 'axios';
 class PlayerList extends React.Component {
     constructor() {
         super();
+        this.state = {
+            playerData: []
+        }
 
     };
 
@@ -13,6 +16,7 @@ class PlayerList extends React.Component {
         .get('http://localhost:5000/api/players')
         .then(res => {
             console.log(res.data)
+            this.setState({playerData: res.data})
         })
         .catch(err => {
             console.log(err)
@@ -21,8 +25,12 @@ class PlayerList extends React.Component {
 
     render() {
         return (
-            <div>
-                {/* <PlayerCard /> */}
+            <div className="player-list">
+                <PlayerCard 
+                playerData={this.state.playerData}
+                name={this.state.playerData.name}
+                country={this.state.playerData.country}
+                searches={this.state.playerData.searches}/>
             </div>
         )
     }
