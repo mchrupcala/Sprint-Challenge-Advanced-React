@@ -34,6 +34,11 @@
 
 /* BASIC STYLING */
 
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
   width: 75%;
   display: flex;
@@ -52,16 +57,44 @@
   margin: 10px 0;
 }
 
+.nav-bar {
+  width: 100%;
+  background: grey;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.links {
+  width: 50%;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  margin: 0 10px;
+  font-weight: bold;
+}
 
 /* DARK MODE */
 
-.dark-mode__toggle {
+.dark-mode-toggle {
   background: red;
   border-radius: 50px;
   border: 1px solid black;
   height: 20px;
-  position: relative;
   width: 50px;
+  margin-right: 5%;
+}
+
+.toggle-div {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .toggle {
@@ -69,9 +102,9 @@
   border-radius: 50px;
   height: 18px;
   left: 0;
-  position: absolute;
   transition: 0.2s;
   width: 22.5px;
+  margin-right: 5%;
 }
 
 .toggled {
@@ -81,9 +114,4 @@
 .dark-mode {
   color: #fff;
   background-color: #313843;
-
-  .nav-bar {
-    background-color: #1F2022;
-    border: none;
-  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { getByText } from '@testing-library/dom';
+import { getByText, findAllBy } from '@testing-library/dom';
 import { render } from '@testing-library/react';
 import App from './App';
 
@@ -14,10 +14,17 @@ test('header appears on the screen', () => {
   getByText(/player list/i);
 });
 
-// test('all four buttons are displaying on-screen', () => {
-//   let { getByText, getByTestId} = render(<App />);
+test('toggle button and toggle background appear', () => {
+  let { getByTestId} = render(<App />);
   
-//   getByTestId(/ball-button/i);
-//   getByTestId(/strike-button/i);
+  getByTestId(/toggle-background-div/i);
+  getByTestId(/toggle-button/i);
 
-// });
+});
+
+test('test that the nav bar is rendering', () => {
+  let { getByText} = render(<App />);
+  
+  getByText(/home/i);
+  getByText(/about/i);
+});

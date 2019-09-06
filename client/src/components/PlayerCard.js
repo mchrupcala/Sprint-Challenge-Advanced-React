@@ -4,7 +4,7 @@ const PlayerCard = props => {
 
     return (
         <div>
-            {props.playerData.map(item => {
+            {props.data.map(item => {
                 return (
                     <div className="player-card">
                         <h1>{item.name}</h1>
